@@ -19,7 +19,7 @@ def profile(name):
 	return render_template('index.html', name=name)
 
 
-@app.route('/add_numbers', methods=['GET','POST'])
+@app.route('/mult_numbers', methods=['GET','POST'])
 def add_numbers_post():
 	  # --> ['5', '6', '8']
 	  # print(type(request.form['text']))
@@ -27,10 +27,10 @@ def add_numbers_post():
 	  	return render_template('add_numbers.html')
 	  elif request.method == 'POST':
   	      print(request.form['text'].split())
-  	      total = 0
+  	      total = 1
   	      try:
   	      	for str_num in request.form['text'].split():
-  	      		total += int(str_num)
+  	      		total *= int(str_num)
   	      	return render_template('add_numbers.html', result=str(total))
   	      except ValueError:
   	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
