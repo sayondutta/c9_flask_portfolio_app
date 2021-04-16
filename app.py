@@ -19,7 +19,7 @@ def profile(name):
 	return render_template('index.html', name=name)
 
 
-@app.route('/mult_numbers', methods=['GET','POST'])
+@app.route('/add_numbers', methods=['GET','POST'])
 def add_numbers_post():
 	  # --> ['5', '6', '8']
 	  # print(type(request.form['text']))
